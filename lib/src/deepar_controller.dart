@@ -80,12 +80,12 @@ class CameraDeepArController extends ValueNotifier<DeepArConfig> {
     return _channel.invokeMethod('snapPhoto');
   }
 
-  Future startVideoRecording() async {
-    return _channel.invokeMethod('startVideoRecording');
+  Future<String> startVideoRecording() async {
+    return _channel.invokeMethod('startVideoRecording') as String;
   }
 
-  Future stopVideoRecording() async {
-    return _channel.invokeMethod('stopVideoRecording');
+  Future<String> stopVideoRecording() async {
+    return _channel.invokeMethod('stopVideoRecording') as String;
   }
 
   Future setCameraMode({required CameraMode mode}) async {
