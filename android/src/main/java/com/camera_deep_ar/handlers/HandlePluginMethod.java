@@ -83,12 +83,11 @@ Log.e(TAG,"onMethodCall "+methodCall.method);
             result.success("ZoomTo Changed");
         }
         else  if ("startVideoRecording".equals(methodCall.method)) {
-             handle.startVideoRecording();
-            result.success("VideoRecording Started");
+            result.success(handle.startVideoRecording());
         }
         else  if ("stopVideoRecording".equals(methodCall.method)) {
             handle.stopVideoRecording();
-            result.success("VideoRecording Stopped");
+            result.success(handle.videoFile.getPath());
         }
         else  if ("snapPhoto".equals(methodCall.method)) {
             handle.snapPhoto();

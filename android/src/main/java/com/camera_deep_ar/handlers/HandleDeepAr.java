@@ -289,10 +289,11 @@ public class HandleDeepAr {
         cameraGrabber.getCamera().setParameters(camParams);
     }
 
-    public void startVideoRecording() {
+    public String startVideoRecording() {
         CharSequence now = DateFormat.format("yyyy_MM_dd_hh_mm_ss", new Date());
         videoFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES) + "/DeepAR_" + now + ".mp4");
         deepAR.startVideoRecording(videoFile.getPath());
+        return videoFile.getPath();
     }
 
     public void setCameraMode(int mode) {
